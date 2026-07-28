@@ -1,7 +1,7 @@
 import { Chessboard } from "react-chessboard";
 
 
-export default function ChessWorksheet({ puzzles, pageName }) {
+export default function ChessWorksheet({ puzzles, pageName, pageNumber }) {
     var squareStyles = {};
 
 
@@ -23,24 +23,24 @@ export default function ChessWorksheet({ puzzles, pageName }) {
 
     const hollowTriangle = <svg className="w-4 h-4" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
         <polygon className="fill-transparent stroke-black stroke-[4px]"
-        points="50,5 95,95 5,95" />
+            points="50,5 95,95 5,95" />
     </svg>
 
     const filledTriangle = <svg className="w-4 h-4" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <polygon className="fill-black stroke-black stroke-[4px]" 
-        points="50,5 95,95 5,95" />
+        <polygon className="fill-black stroke-black stroke-[4px]"
+            points="50,5 95,95 5,95" />
     </svg>
 
     return (
-        <div className="p-8 flex flex-col items-center bg-gray-100 min-h-screen print:bg-white print:p-0
-        print:pt-10 print:[-webkit-print-color-adjust:exact] print:[print-color-adjust:exact]">
+        <div className="p-8 flex flex-col items-center bg-gray-100 min-h-screen print:bg-white 
+        print:p-0 print:pt-10 print:[-webkit-print-color-adjust:exact] print:[print-color-adjust:exact]">
 
 
             <div
                 className="bg-white p-12 shadow-lg w-198.5 min-h-280.75 flex flex-col 
                 print:shadow-none print:w-full print:min-h-0 print:p-0 "
             >
-                <header className="mb-8 border-b-2 border-gray-200 pb-4 flex justify-between items-end">
+                <header className="mb-8 border-b-2 pb-4 border-gray-500 flex justify-between items-end">
                     <h2 className="text-3xl font-bold text-black">{pageName}</h2>
                     <span className="italic text-black">Name: ______________________</span>
                 </header>
@@ -73,9 +73,9 @@ export default function ChessWorksheet({ puzzles, pageName }) {
                     })}
                 </div>
 
-                {/* <footer className="mt-5 pt-4 text-center text-sm border-t border-gray-200 text-gray-500">
-                    Generated via chess-worksheet app
-                </footer> */}
+                <footer className="mt-5 pt-4 text-center text-sm border-t text-gray-500">
+                    {pageNumber}
+                </footer>
             </div>
 
         </div>
