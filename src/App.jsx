@@ -208,6 +208,7 @@ function App() {
 
         <hr className='border-2 border-white w-full' />
 
+        {/* Shows added puzzles */}
         <div className='w-3/5 flex flex-col items-center mt-10 gap-5 hide'>
 
           <h2 className='second-heading'>{pageName}</h2>
@@ -223,7 +224,7 @@ function App() {
               return (
                 <div className='flex flex-col items-center w-full' key={index}>
                   <p className='text-lg font-bold text-gray-200'>
-                    {++index}. {(puzzle.split(' ')[1] == 'w' ? 'white' : 'black')} to play
+                    {index + 1}. {(puzzle.split(' ')[1] == 'w' ? 'white' : 'black')} to play
                   </p>
                   <Chessboard options={chessboardOptions} />
 
@@ -236,7 +237,7 @@ function App() {
                     <svg className="w-1/12 h-full stroke-white fill-white hover:fill-red-400
                       hover:stroke-red-400 hover:cursor-pointer"
                       onClick={() => {
-                        setPuzzles((prev) => prev.filter((_, i) => i !== index))
+                        setPuzzles((prev) => prev.filter((_, i) => i !== index));
                       }}
                       height="800px" width="800px" version="1.1" id="_x32_"
                       xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
